@@ -23,7 +23,7 @@ jobs:
       - name: Falcon FCS IaC Scan
         uses: crowdstrike/fcs-action@v4.0.1
         with:
-          falcon_client_id: ${{ vars.FALCON_CLIENT_ID }}
+          falcon_client_id: ${{ secrets.FALCON_CLIENT_ID }}
           falcon_region: 'us-east-1'
           path: './'
           scan_type: iac
