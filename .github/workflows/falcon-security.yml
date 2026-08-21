@@ -24,9 +24,10 @@ jobs:
         uses: crowdstrike/fcs-action@v4.0.1
         with:
           falcon_client_id: ${{ secrets.FALCON_CLIENT_ID }}
-          falcon_region: 'us-2'
-          path: './'
+          falcon_region: us-2
           scan_type: iac
-          fail_on: 'critical=1,high=1,medium=1,informational=1'
+          path: ./
+          upload_results: true
+          project_name: falcon-cnapp-poc
         env:
           FALCON_CLIENT_SECRET: ${{ secrets.FALCON_CLIENT_SECRET }}
