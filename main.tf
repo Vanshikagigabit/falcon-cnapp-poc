@@ -4,12 +4,12 @@ resource "aws_s3_bucket" "falcon_poc_bucket" {
   tags = {
     Name        = "Falcon CNAPP POC"
     Environment = "Testing"
-    Purpose     = "Falcon Cloud Security CI/CD Testing"
+    Purpose    = "Falcon Cloud Security CI/CD Testing"
   }
 }
 
 # INTENTIONALLY INSECURE CONFIGURATION
-# This is for testing Falcon's IaC security detection.
+# This is for testing Falcon's IaC security] detection.
 
 resource "aws_s3_bucket_public_access_block" "falcon_poc_public_access" {
   bucket = aws_s3_bucket.falcon_poc_bucket.id
